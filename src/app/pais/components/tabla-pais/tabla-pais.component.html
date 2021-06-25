@@ -1,0 +1,26 @@
+<div *ngIf="paises.length > 0 && paises" class="row ">
+  <div class="col table-responsive-md">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th> # </th>
+          <th> Bandera </th>
+          <th> Nombre </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pais of paises; index as i" class="animate__animated animate__fadeIn animated__faster">
+          <td> {{ i+1 }} </td>
+          <td>
+            <img [src]="pais.flag" class="small-flag" alt="">
+          </td>
+          <td>{{ pais.name }} </td>
+          <td>
+            <a [routerLink]=" ['/pais',pais.alpha2Code] ">Ver Pais...</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
